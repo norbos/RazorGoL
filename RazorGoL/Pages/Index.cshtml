@@ -4,9 +4,12 @@
     ViewData["Title"] = "Home page";
 }
 <div class="table-container">
-    <div style="display:flex; align-items:center; padding-right: 20px;">
+    <div class="button-container">
         <button class="btn">Start</button>
         <button class="btn">Stop</button>
+        <form method="post">
+            <button type="submit" class="btn" asp-page-handler="Next">Next</button>
+        </form>
     </div>
     <div>
         <table class="board-table">
