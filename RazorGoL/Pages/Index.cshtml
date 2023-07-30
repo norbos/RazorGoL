@@ -3,8 +3,29 @@
 @{
     ViewData["Title"] = "Home page";
 }
+<div class="table-container">
+    <div style="display:flex; align-items:center; padding-right: 20px;">
+        <button class="btn">Start</button>
+        <button class="btn">Stop</button>
+    </div>
+    <div>
+        <table class="board-table">
+            <tbody>
+                @for (int i = 0; i < Model.SimulationState.Board.Length; i++)
+                {
+                    <tr>
+                        @for (int j = 0; j < Model.SimulationState.Board[i].Length; j++)
+                        {
+                            string cellClass = Model.SimulationState.Board[i][j] == Models.CellState.Alive ?
+                            "alive-cell" : "dead-cell";
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+                            <td>
+                                <div id="@i-@j" class="cell @cellClass" />
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>

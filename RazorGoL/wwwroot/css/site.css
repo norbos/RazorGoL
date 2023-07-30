@@ -18,5 +18,37 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: grey;
+}
+
+td {
+    padding: 0.6px;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+}
+
+.alive-cell {
+    background-color: green;
+}
+
+.dead-cell {
+    background-color: black;
+}
+
+.board-table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
+    background-color: white;
 }
