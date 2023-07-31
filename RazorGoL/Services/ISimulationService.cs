@@ -6,6 +6,6 @@ namespace RazorGoL.Services
     {
         Task<SimulationState> CurrentStateAsync();
         Task<SimulationState> NextStateAsync();
-        Task SetStateAsync(SimulationState state);
+        Task SetStateAsync(InitializeData data);
     }
 }
