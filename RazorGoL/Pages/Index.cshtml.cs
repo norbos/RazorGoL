@@ -28,5 +28,10 @@ namespace RazorGoL.Pages
 
             return Page();
         }
+
+        public IActionResult OnPost([FromBody] CellClickEventData data)
+        {
+            return Content("Success");
+        }
     }
 }
