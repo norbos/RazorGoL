@@ -4,7 +4,6 @@
     let col = coordinates[1];
 
     const cellElement = document.getElementById(event.target.id);
-    cellElement.className = 'cell alive-cell';
 
     const requestOptions = {
         method: 'POST',
@@ -15,12 +14,18 @@
         },
         body: JSON.stringify({ row: row, column: col }),
     };
-    
+
     fetch('/', requestOptions)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
+
+            response.json().then(result => {
+                var newClass = result.state === 0 ? 'dead-cell' : 'alive-cell';
+                cellElement.className = `cell ${newClass}`;
+            });
+            
             return response;
         }).catch(error => {
             console.error('Error:', error);
